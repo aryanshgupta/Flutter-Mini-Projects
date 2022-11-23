@@ -6,7 +6,7 @@ void main() => runApp(
         home: Scaffold(
           backgroundColor: Colors.blue.shade100,
           appBar: AppBar(
-            title: Text("Micronsol"),
+            title: Text("Learn Flutter"),
             centerTitle: true,
             backgroundColor: Colors.red,
           ),
