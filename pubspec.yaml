@@ -23,6 +23,9 @@ flutter:
 
   assets:
     - assets/images/
+    - data_repo/json_data.json
+    - data_repo/img/
+    - data_repo/img/social/
 
   fonts:
     - family: ProductSans
