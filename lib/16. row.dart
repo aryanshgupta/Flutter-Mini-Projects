@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterRow extends StatelessWidget {
+  static const String path = "/row";
+  const FlutterRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("Row"),
         backgroundColor: Colors.red,
       ),
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text("Hi, this is Aryansh"),
           ElevatedButton(
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
         backgroundColor: Colors.redAccent,
         child: Text("Add"),

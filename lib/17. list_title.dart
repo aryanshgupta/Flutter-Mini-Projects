@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterListTile extends StatelessWidget {
+  static const String path = "/list-tile";
+  const FlutterListTile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("ListTile"),
         backgroundColor: Colors.red,
       ),
       body: ListTile(
@@ -20,18 +20,21 @@ class HomeScreen extends StatelessWidget {
         ),
         title: Text("Aryansh Gupta"),
         subtitle: Text("Learning flutter"),
-        trailing: Icon(
-          Icons.delete_rounded,
-          color: Colors.red,
-          size: 40.0,
+        trailing: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.delete_rounded,
+            color: Colors.grey.shade700,
+            size: 30.0,
+          ),
         ),
         onTap: () {
-          print("tap list tile");
+          debugPrint("tap list tile");
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
         backgroundColor: Colors.redAccent,
         child: Text("Add"),

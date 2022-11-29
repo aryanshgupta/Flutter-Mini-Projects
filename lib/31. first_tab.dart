@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class First extends StatelessWidget {
-  const First({super.key});
+class FirstTab extends StatelessWidget {
+  const FirstTab({super.key});
 
   @override
   Widget build(BuildContext context) {

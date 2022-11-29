@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class FlutterStepper extends StatefulWidget {
+  static const String path = "/stepper";
+  const FlutterStepper({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<FlutterStepper> createState() => _FlutterStepperState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FlutterStepperState extends State<FlutterStepper> {
   var _currentStep = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Flutter Playground")),
+      appBar: AppBar(title: Text("Stepper")),
       body: Stepper(
         type: StepperType.vertical,
         currentStep: _currentStep,

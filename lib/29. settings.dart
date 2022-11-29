@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
-  static const String routeName = "/settings";
+  static const String path = "/settings";
 
   const SettingsScreen({super.key});
   @override

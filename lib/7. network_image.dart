@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterNetworkImage extends StatelessWidget {
+  static const String path = "/network-image";
+  const FlutterNetworkImage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("Network Image"),
         backgroundColor: Colors.red,
       ),
       body: Center(
@@ -20,10 +20,10 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
-        child: Text("Add"),
         backgroundColor: Colors.redAccent,
+        child: Text("Add"),
       ),
     );
   }

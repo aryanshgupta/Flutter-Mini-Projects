@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterAssetImage extends StatelessWidget {
+  static const String path = "/asset-image";
+  const FlutterAssetImage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("Asset Image"),
         backgroundColor: Colors.red,
       ),
       body: Center(
@@ -22,10 +22,10 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
-        child: Text("Add"),
         backgroundColor: Colors.redAccent,
+        child: Text("Add"),
       ),
     );
   }

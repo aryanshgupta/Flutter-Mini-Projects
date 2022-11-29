@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class FlutterListView extends StatelessWidget {
-  static const String path = "/listview";
-  const FlutterListView({super.key});
+class MultipleListTileWithColumn extends StatelessWidget {
+  static const String path = "/multiple-list-tile-with-column";
+  const MultipleListTileWithColumn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("ListView"),
+        title: Text("Multiple ListTile with Column"),
         backgroundColor: Colors.red,
       ),
-      body: ListView(
+      body: Column(
         children: [
           ListTile(
             leading: Icon(

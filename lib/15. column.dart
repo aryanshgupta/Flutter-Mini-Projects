@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterColumn extends StatelessWidget {
+  static const String path = "/column";
+  const FlutterColumn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("Column"),
         backgroundColor: Colors.red,
       ),
-      body: Column(
-        children: [
-          Text("Hi, this is Aryansh"),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Chat"),
-          ),
-          Image.asset(
-            'assets/images/birds.png',
-            height: 200.0,
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text("Hi, this is Aryansh"),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Chat"),
+            ),
+            Image.asset(
+              'assets/images/birds.png',
+              height: 200.0,
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
         backgroundColor: Colors.redAccent,
         child: Text("Add"),

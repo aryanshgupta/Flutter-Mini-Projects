@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/24.%20contact_us.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-  static const routeName = '/';
+class Home extends StatelessWidget {
+  static const path = '/home';
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class HomeScreen extends StatelessWidget {
           onPressed: () async {
             var result = await Navigator.pushNamed(
               context,
-              ContactUs.routeName,
+              ContactUs.path,
               arguments: {"name": "John"},
             );
-            print(result);
+            debugPrint(result.toString());
 
             // Navigator.pushReplacementNamed(context, ContactUs.routeName);
 
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             //     builder: (context) => ContactUs(name: "123"),
             //   ),
             // );
-            // print(result);
+            // debugPrint(result);
 
             // Navigator.pushReplacement(
             //   context,

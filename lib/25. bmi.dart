@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Bmi extends StatelessWidget {
+  static const String path = "/bmi";
+  const Bmi({super.key});
 
   @override
   Widget build(BuildContext context) {

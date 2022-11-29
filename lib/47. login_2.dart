@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class LoginScreen2 extends StatefulWidget {
+  static const String path = "/login-screen-2";
+  const LoginScreen2({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<LoginScreen2> createState() => _LoginScreen2State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _LoginScreen2State extends State<LoginScreen2> {
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -34,8 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text("Login Screen 2"),
       ),
       body: Container(
         alignment: Alignment.topCenter,
@@ -78,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ElevatedButton(
                             onPressed: _showWelcome,
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.redAccent),
+                              backgroundColor: MaterialStateProperty.all(Colors.blue),
                             ),
                             child: Text(
                               "Login",
@@ -94,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: ElevatedButton(
                             onPressed: _erase,
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.redAccent),
+                              backgroundColor: MaterialStateProperty.all(Colors.blue),
                             ),
                             child: Text(
                               "Clear",

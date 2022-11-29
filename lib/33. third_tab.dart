@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Second extends StatelessWidget {
-  const Second({super.key});
+class ThirdTab extends StatelessWidget {
+  const ThirdTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +10,11 @@ class Second extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
           Icon(
-            Icons.adb,
+            Icons.airport_shuttle,
             size: 160.0,
-            color: Colors.green,
+            color: Colors.blue,
           ),
-          Text("Second Tab")
+          Text("Third Tab")
         ],
       ),
     );

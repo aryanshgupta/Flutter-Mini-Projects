@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterTextField extends StatelessWidget {
+  static const String path = "/textfield";
+  const FlutterTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("TextField"),
         backgroundColor: Colors.red,
       ),
       body: Padding(
@@ -24,13 +24,13 @@ class HomeScreen extends StatelessWidget {
             // border: InputBorder.none,
           ),
           onChanged: (value) {
-            print(value);
+            debugPrint(value);
           },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
         backgroundColor: Colors.redAccent,
         child: Text("Add"),

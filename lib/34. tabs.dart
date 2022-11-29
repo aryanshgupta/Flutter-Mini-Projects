@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import '32. first_tab.dart';
-import '33. second_tab.dart';
-import '34. third_tab.dart';
+import '31. first_tab.dart';
+import '32. second_tab.dart';
+import '33. third_tab.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class FlutterTabs extends StatefulWidget {
+  static const String path = "/tabs";
+  const FlutterTabs({super.key});
 
   @override
-  HomeScreenState createState() => HomeScreenState();
+  FlutterTabsState createState() => FlutterTabsState();
 }
 
-class HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
+class FlutterTabsState extends State<FlutterTabs> with SingleTickerProviderStateMixin {
   late TabController controller;
   @override
   void initState() {
@@ -28,7 +29,7 @@ class HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Using Tabs"),
+        title: Text("Tabs"),
         backgroundColor: Colors.blue,
         bottom: TabBar(
           tabs: const <Tab>[
@@ -42,9 +43,9 @@ class HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMi
       body: TabBarView(
         controller: controller,
         children: const <Widget>[
-          First(),
-          Second(),
-          Third(),
+          FirstTab(),
+          SecondTab(),
+          ThirdTab(),
         ],
       ),
     );

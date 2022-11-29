@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class CheckboxRadioSliderSwitch extends StatefulWidget {
+  static const String path = "/checkbox-radio-slider-switch";
+  const CheckboxRadioSliderSwitch({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CheckboxRadioSliderSwitch> createState() => _CheckboxRadioSliderSwitchState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CheckboxRadioSliderSwitchState extends State<CheckboxRadioSliderSwitch> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   var _checkboxValue = false;
@@ -18,6 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext inContext) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Checkbox, Radio, Slider, Switch"),
+      ),
       body: Container(
         padding: EdgeInsets.all(50.0),
         child: Form(
@@ -30,24 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     _checkboxValue = inValue!;
                   });
-                },
-              ),
-              Switch(
-                value: _switchValue,
-                onChanged: (inValue) {
-                  setState(() {
-                    _switchValue = inValue;
-                  });
-                },
-              ),
-              Slider(
-                min: 0.0,
-                max: 20.0,
-                value: _sliderValue,
-                onChanged: (inValue) {
-                  setState(
-                    () => _sliderValue = inValue,
-                  );
                 },
               ),
               Row(
@@ -91,7 +77,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Text("Option 3"),
                 ],
-              )
+              ),
+              Slider(
+                min: 0.0,
+                max: 20.0,
+                value: _sliderValue,
+                onChanged: (inValue) {
+                  setState(
+                    () => _sliderValue = inValue,
+                  );
+                },
+              ),
+              Switch(
+                value: _switchValue,
+                onChanged: (inValue) {
+                  setState(() {
+                    _switchValue = inValue;
+                  });
+                },
+              ),
             ],
           ),
         ),

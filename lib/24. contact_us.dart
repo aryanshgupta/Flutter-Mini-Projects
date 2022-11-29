@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ContactUs extends StatelessWidget {
+  static const path = '/contactus';
   final String name;
   const ContactUs({super.key, this.name = 'None'});
-  static const routeName = '/contact';
 
   @override
   Widget build(BuildContext context) {

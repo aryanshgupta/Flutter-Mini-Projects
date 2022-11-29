@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class EditText extends StatefulWidget {
+  static const String path = "/edit-text";
+  const EditText({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<EditText> createState() => _EditTextState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _EditTextState extends State<EditText> {
   String name = 'Aryansh';
   @override
   Widget build(BuildContext context) {
     debugPrint("Widget is rendering");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stateful Widget"),
+        title: Text("Edit Text"),
       ),
       body: Column(
         children: [

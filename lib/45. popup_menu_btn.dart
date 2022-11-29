@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PopupMenuBtn extends StatelessWidget {
+  static const String path = "/popup-menu-button";
+  const PopupMenuBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Popup Menu Button"),
+      ),
       body: Center(
         child: PopupMenuButton(
           onSelected: (String result) {
-            print(result);
+            debugPrint(result);
           },
           itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
             PopupMenuItem(

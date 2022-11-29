@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class FlutterAlertDialog extends StatelessWidget {
+  static const String path = "/alert-dialog";
+  const FlutterAlertDialog({super.key});
 
   void _showIt(context) async {
     return showDialog(
@@ -9,13 +10,11 @@ class HomeScreen extends StatelessWidget {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("We come in peace..."),
-          content: Center(
-            child: Text("...shoot to kill shoot to kill shoot to kill"),
-          ),
+          title: Text("AlertDialog Widget"),
+          content: Text("Creates an alert dialog. Typically used in conjunction with showDialog."),
           actions: [
             ElevatedButton(
-              child: Text("Beam me up, Scotty!"),
+              child: Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -29,6 +28,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Alert Dialog"),
+      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _showIt(context),

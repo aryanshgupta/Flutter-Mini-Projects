@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class NameList extends StatefulWidget {
+  static const String path = "/name-list";
   final String username;
-  const HomeScreen({super.key, this.username = 'Jeff Bezoz'});
+  const NameList({super.key, this.username = 'Jeff Bezoz'});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NameList> createState() => _NameListState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _NameListState extends State<NameList> {
   List<String> names = ['Elon', 'Bill', 'Mark'];
   int i = 0;
   Color color = Colors.red;
@@ -18,34 +19,34 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    print("init state");
+    debugPrint("init state");
     name = widget.username;
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("did change dependencies");
+    debugPrint("did change dependencies");
   }
 
   @override
-  void didUpdateWidget(covariant HomeScreen oldWidget) {
+  void didUpdateWidget(covariant NameList oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (this.widget.username != oldWidget.username) {
-      print("did update widget");
+    if (widget.username != oldWidget.username) {
+      debugPrint("did update widget");
     }
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    print("deactivate");
+    debugPrint("deactivate");
   }
 
   @override
   void dispose() {
     super.dispose();
-    print("dispose");
+    debugPrint("dispose");
   }
 
   @override
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
     debugPrint("build function");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stateful Widget - $name"),
+        title: Text("Name List"),
       ),
       body: Center(
         child: Column(

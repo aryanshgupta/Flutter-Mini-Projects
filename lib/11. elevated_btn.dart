@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ElevatedBtn extends StatelessWidget {
+  static const String path = "/elevated-button";
+  const ElevatedBtn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Text("Learn Flutter"),
-        centerTitle: true,
+        title: Text("Elevated Button"),
         backgroundColor: Colors.red,
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
             ),
+            backgroundColor: Colors.red,
             padding: EdgeInsets.all(15.0),
             elevation: 2,
           ),
@@ -28,10 +29,10 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Hello");
+          debugPrint("Hello");
         },
-        child: Text("Add"),
         backgroundColor: Colors.redAccent,
+        child: Text("Add"),
       ),
     );
   }

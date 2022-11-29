@@ -1,25 +1,30 @@
 import "package:flutter/material.dart";
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class OpacityThemeDataGradientColorTransform extends StatelessWidget {
+  static const String path = "/opacity-themedata-gradient-color-transform";
+  const OpacityThemeDataGradientColorTransform({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Opacity, ThemeData, GradientColor, Transform"),
+      ),
       body: Column(
         children: [
           Spacer(),
           Center(
             child: Opacity(
-              opacity: .25,
+              opacity: 0.5,
               child: Text("Faded"),
             ),
           ),
           Spacer(),
           Center(
             child: Theme(
-              data:
-                  ThemeData(colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red)),
+              data: ThemeData(
+                colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
+              ),
               child: Container(
                 color: Theme.of(context).colorScheme.secondary,
                 child: Text(
@@ -34,16 +39,17 @@ class HomeScreen extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
                   colors: const [
-                    Color(0xFF000000),
-                    Color(0xFFFF0000),
+                    Color(0xff673ab7),
+                    Color.fromARGB(255, 161, 131, 211),
                   ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                   tileMode: TileMode.repeated,
                 ),
               ),
-              child: SizedBox(
+              child: Container(
+                alignment: Alignment.center,
                 width: 100,
                 height: 100,
                 child: Text(

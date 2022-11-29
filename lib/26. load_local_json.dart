@@ -1,14 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class LoadLocalJson extends StatefulWidget {
+  static const String path = "/load-local-json";
+  const LoadLocalJson({super.key});
 
   @override
-  HomeScreenState createState() => HomeScreenState();
+  LoadLocalJsonState createState() => LoadLocalJsonState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class LoadLocalJsonState extends State<LoadLocalJson> {
   late List data;
   @override
   Widget build(BuildContext context) {
@@ -20,26 +21,30 @@ class HomeScreenState extends State<HomeScreen> {
         child: FutureBuilder(
           future: DefaultAssetBundle.of(context).loadString('data_repo/json_data.json'),
           builder: (context, snapshot) {
-            var new_data = json.decode(snapshot.data.toString());
+            var newData = json.decode(snapshot.data.toString());
             return ListView.builder(
               itemBuilder: (BuildContext context, int index) {
                 return Card(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Text("Name: ${new_data[index]['name']}"),
-                      Text("Height: ${new_data[index]['height']}"),
-                      Text("Mass: ${new_data[index]['mass']}"),
-                      Text("Hair Color: ${new_data[index]['hair_color']}"),
-                      Text("Skin Color: ${new_data[index]['skin_color']}"),
-                      Text("Eye Color: ${new_data[index]['eye_color']}"),
-                      Text("Birth Year: ${new_data[index]['birth_year']}"),
-                      Text("Gender: ${new_data[index]['gender']}")
-                    ],
+                  margin: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.5),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Text("Name: ${newData[index]['name']}"),
+                        Text("Height: ${newData[index]['height']}"),
+                        Text("Mass: ${newData[index]['mass']}"),
+                        Text("Hair Color: ${newData[index]['hair_color']}"),
+                        Text("Skin Color: ${newData[index]['skin_color']}"),
+                        Text("Eye Color: ${newData[index]['eye_color']}"),
+                        Text("Birth Year: ${newData[index]['birth_year']}"),
+                        Text("Gender: ${newData[index]['gender']}")
+                      ],
+                    ),
                   ),
                 );
               },
-              itemCount: new_data == null ? 0 : new_data.length,
+              itemCount: newData == null ? 0 : newData.length,
             );
           },
         ),

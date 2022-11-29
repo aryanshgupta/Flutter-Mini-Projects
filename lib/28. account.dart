@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
-  static const String routeName = "/account";
+  static const String path = "/account";
 
   const AccountScreen({super.key});
   @override
