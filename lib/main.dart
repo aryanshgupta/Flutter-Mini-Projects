@@ -41,6 +41,7 @@ import 'package:learn_flutter/47.%20login_2.dart';
 import 'package:learn_flutter/48.%20tip_calculator.dart';
 import 'package:learn_flutter/49.%20planet_x.dart';
 import 'package:learn_flutter/5.%20styling_floating_action_btn_and_appbar.dart';
+import 'package:learn_flutter/51.%20trainee_management.dart';
 import 'package:learn_flutter/6.%20text_styling.dart';
 import 'package:learn_flutter/7.%20network_image.dart';
 import 'package:learn_flutter/8.%20asset_image.dart';
@@ -106,6 +107,7 @@ class MyApp extends StatelessWidget {
         LoginScreen2.path: (context) => LoginScreen2(),
         TipCalculator.path: (context) => TipCalculator(),
         PlanetX.path: (context) => PlanetX(),
+        TraineeManagement.path: (context) => TraineeManagement(),
       },
     );
   }
