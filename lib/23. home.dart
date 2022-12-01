@@ -21,22 +21,31 @@ class Home extends StatelessWidget {
             );
             debugPrint(result.toString());
 
-            // Navigator.pushReplacementNamed(context, ContactUs.routeName);
+            // ------------------------------------------------------
+            // var result = await Navigator.pushReplacementNamed(
+            //   context,
+            //   ContactUs.path,
+            //   arguments: {"name": "John"},
+            // );
+            // debugPrint(result.toString());
 
+            // ------------------------------------------------------
             // var result = await Navigator.push(
             //   context,
             //   MaterialPageRoute(
-            //     builder: (context) => ContactUs(name: "123"),
+            //     builder: (context) => ContactUs(name: "Peter"),
             //   ),
             // );
             // debugPrint(result);
 
-            // Navigator.pushReplacement(
+            // ------------------------------------------------------
+            // var result = await Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(
-            //     builder: (context) => ContactUs(),
+            //     builder: (context) => ContactUs(name: "Peter"),
             //   ),
             // );
+            // debugPrint(result);
           },
           child: Text("Contact Us"),
         ),
