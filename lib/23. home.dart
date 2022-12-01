@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
             // var result = await Navigator.pushReplacementNamed(
             //   context,
             //   ContactUs.path,
-            //   arguments: {"name": "John"},
+            //   arguments: {"name": "Bill"},
             // );
             // debugPrint(result.toString());
 
@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
             // var result = await Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(
-            //     builder: (context) => ContactUs(name: "Peter"),
+            //     builder: (context) => ContactUs(name: "Elon"),
             //   ),
             // );
             // debugPrint(result);

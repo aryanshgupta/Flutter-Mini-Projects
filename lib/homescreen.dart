@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
       path: NameList.path,
     ),
     Screen(
-      title: 'Home',
+      title: 'Passing data between pages',
       path: Home.path,
     ),
     Screen(
