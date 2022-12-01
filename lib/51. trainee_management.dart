@@ -48,6 +48,8 @@ class _TraineeManagementState extends State<TraineeManagement> {
   void deleteItem(int id) async {
     await SQLHelper.deleteItem(id);
 
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Successfully deleted a trainee!'),
@@ -105,6 +107,7 @@ class _TraineeManagementState extends State<TraineeManagement> {
 
                 titleController.text = '';
                 descriptionController.text = '';
+                if (!mounted) return;
                 Navigator.of(context).pop();
               },
               child: Text(id == null ? 'Create New' : 'Update'),
