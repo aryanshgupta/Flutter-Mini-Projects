@@ -57,6 +57,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
+      // onGenerateRoute: RouteGenerator.generateRoute,
       routes: {
         HomeScreen.path: (context) => HomeScreen(),
         BusinessCard.path: (context) => BusinessCard(),

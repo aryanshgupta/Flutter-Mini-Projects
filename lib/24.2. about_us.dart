@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
 
-class ContactUs extends StatelessWidget {
-  static const path = '/contact-us';
-  final String? name;
-  const ContactUs({super.key, this.name = ''});
+class AboutUs extends StatelessWidget {
+  static const path = '/about-us';
+  final String name;
+  const AboutUs({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
-    String? value = '';
-    if (ModalRoute.of(context)!.settings.arguments != null) {
-      value = ModalRoute.of(context)!.settings.arguments as String?;
-    }
-
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact Us"),
+        title: Text("About Us"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 15.0),
-            Text("Welcome to contact page: ${name != null ? value : name}"),
+            Text("Welcome to about page: $name"),
             SizedBox(height: 15.0),
             ElevatedButton(
               onPressed: () {
