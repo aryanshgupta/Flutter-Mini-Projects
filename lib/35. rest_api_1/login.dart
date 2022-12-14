@@ -6,8 +6,8 @@ class LoginScreen extends StatelessWidget {
   static const String path = "/flutter-shop-login";
   LoginScreen({super.key});
 
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController(text: "mor_2314");
+  final TextEditingController passwordController = TextEditingController(text: "83r5^_");
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +77,13 @@ class LoginScreen extends StatelessWidget {
                         ),
                       );
                     }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Enter username and password"),
+                        backgroundColor: Colors.green,
+                      ),
+                    );
                   }
                 },
                 child: Text(
