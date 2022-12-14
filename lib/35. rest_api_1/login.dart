@@ -47,29 +47,31 @@ class LoginScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   if (usernameController.text.isNotEmpty && passwordController.text.isNotEmpty) {
-                    final getToken = await ApiService()
-                        .userLogin(usernameController.text, passwordController.text);
+                    try {
+                      final getToken = await ApiService()
+                          .userLogin(usernameController.text, passwordController.text);
 
-                    if (getToken['token'] != null) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Success! your token id ${getToken['token']}"),
-                          backgroundColor: Colors.green,
-                        ),
-                      );
+                      if (getToken['token'] != null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text("Success! your token id ${getToken['token']}"),
+                            backgroundColor: Colors.green,
+                          ),
+                        );
 
-                      Future.delayed(
-                        Duration(seconds: 2),
-                        () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProductList(),
-                            ),
-                          );
-                        },
-                      );
-                    } else {
+                        Future.delayed(
+                          Duration(seconds: 2),
+                          () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductList(),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    } catch (err) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text("Username or Password incorrect"),
