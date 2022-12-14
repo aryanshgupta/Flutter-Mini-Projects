@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ContactUs extends StatelessWidget {
   static const path = '/contact-us';
-  final String? name;
+  final String name;
   const ContactUs({super.key, this.name = ''});
 
   @override
@@ -21,7 +21,7 @@ class ContactUs extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 15.0),
-            Text("Welcome to contact page: ${name != null ? value : name}"),
+            Text("Welcome to contact page: ${name.isEmpty ? value : name}"),
             SizedBox(height: 15.0),
             ElevatedButton(
               onPressed: () {

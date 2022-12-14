@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import '23. home.dart';
-import '24.2. about_us.dart';
+import 'contact_us.dart';
+import 'home.dart';
 
+// add these two properties in material app
+// initialRoute: '/',
+// onGenerateRoute: RouteGenerator.generateRoute,
+// remove route property if there
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Home());
-      case AboutUs.path:
+      case ContactUs.path:
         if (args is String) {
           return MaterialPageRoute(
-            builder: (_) => AboutUs(
+            builder: (_) => ContactUs(
               name: args,
             ),
           );

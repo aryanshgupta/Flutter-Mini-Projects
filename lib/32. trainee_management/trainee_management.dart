@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '50. trainee_sql_helper.dart';
+import 'trainee_sql_helper.dart';
 
 class TraineeManagement extends StatefulWidget {
   static const String path = "/trainee-management";

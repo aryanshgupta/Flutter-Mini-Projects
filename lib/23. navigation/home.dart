@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/24.%20contact_us.dart';
-import 'package:learn_flutter/24.2. about_us.dart';
+import 'contact_us.dart';
 
 class Home extends StatelessWidget {
   static const path = '/home';
@@ -23,7 +22,7 @@ class Home extends StatelessWidget {
                   var result = await Navigator.pushNamed(
                     context,
                     ContactUs.path,
-                    arguments: "John",
+                    arguments: "John", // optional
                   );
                   debugPrint(result.toString());
                 },
@@ -36,13 +35,13 @@ class Home extends StatelessWidget {
                 onPressed: () async {
                   var result = await Navigator.pushNamed(
                     context,
-                    AboutUs.path,
-                    arguments: "Adam",
+                    ContactUs.path,
+                    arguments: "Adam", // using route-generator to send required parameter
                   );
                   debugPrint(result.toString());
                 },
                 child: Text(
-                  "About Us - using pushNamed with required parameter",
+                  "Contact Us - using pushNamed with required parameter",
                   textAlign: TextAlign.center,
                 ),
               ),

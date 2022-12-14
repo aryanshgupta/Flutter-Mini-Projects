@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '31. first_tab.dart';
-import '32. second_tab.dart';
-import '33. third_tab.dart';
+import 'first_tab.dart';
+import 'second_tab.dart';
+import 'third_tab.dart';
 
 class FlutterTabs extends StatefulWidget {
   static const String path = "/tabs";

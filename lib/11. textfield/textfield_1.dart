@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class FlutterTextField extends StatelessWidget {
+class FlutterTextField1 extends StatelessWidget {
   static const String path = "/textfield";
-  const FlutterTextField({super.key});
+  const FlutterTextField1({super.key});
 
   @override
   Widget build(BuildContext context) {

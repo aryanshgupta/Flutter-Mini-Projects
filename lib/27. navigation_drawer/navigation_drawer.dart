@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '28. account.dart';
-import '29. settings.dart';
+import 'account.dart';
+import 'settings.dart';
 
 class FlutterNavigationDrawer extends StatefulWidget {
   static const String path = "/navigation-drawer";
