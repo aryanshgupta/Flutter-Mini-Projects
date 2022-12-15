@@ -37,7 +37,7 @@ class CartScreen extends StatelessWidget {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text("Product added to cart"),
-                                backgroundColor: Colors.green,
+                                backgroundColor: Colors.black,
                               ),
                             );
                           },
