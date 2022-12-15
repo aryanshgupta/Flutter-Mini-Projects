@@ -32,7 +32,15 @@ class CartScreen extends StatelessWidget {
                         ),
                         subtitle: Text("Quantity - ${products[index]['quantity']}"),
                         trailing: IconButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await ApiService().deleteCart('1');
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text("Product added to cart"),
+                                backgroundColor: Colors.green,
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.delete_rounded,
                             color: Colors.red,

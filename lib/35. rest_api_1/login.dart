@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
 import 'package:learn_flutter/35.%20rest_api_1/product_list.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const String path = "/flutter-shop-login";
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController usernameController = TextEditingController(text: "mor_2314");
   final TextEditingController passwordController = TextEditingController(text: "83r5^_");
+
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,49 +52,58 @@ class LoginScreen extends StatelessWidget {
               height: 50.0,
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
-                onPressed: () async {
-                  if (usernameController.text.isNotEmpty && passwordController.text.isNotEmpty) {
-                    try {
-                      final getToken = await ApiService()
-                          .userLogin(usernameController.text, passwordController.text);
+                onPressed: isLoading
+                    ? null
+                    : () async {
+                        if (usernameController.text.isNotEmpty &&
+                            passwordController.text.isNotEmpty) {
+                          setState(() {
+                            isLoading = true;
+                          });
+                          try {
+                            final getToken = await ApiService()
+                                .userLogin(usernameController.text, passwordController.text);
 
-                      if (getToken['token'] != null) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text("Success! your token id ${getToken['token']}"),
-                            backgroundColor: Colors.green,
-                          ),
-                        );
+                            if (getToken['token'] != null) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text("Success! your token id ${getToken['token']}"),
+                                  backgroundColor: Colors.green,
+                                ),
+                              );
 
-                        Future.delayed(
-                          Duration(seconds: 2),
-                          () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProductList(),
+                              Future.delayed(
+                                Duration(seconds: 2),
+                                () {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ProductList(),
+                                    ),
+                                  );
+                                },
+                              );
+                            }
+                          } catch (err) {
+                            setState(() {
+                              isLoading = false;
+                            });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text("Username or Password incorrect"),
+                                backgroundColor: Colors.green,
                               ),
                             );
-                          },
-                        );
-                      }
-                    } catch (err) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Username or Password incorrect"),
-                          backgroundColor: Colors.green,
-                        ),
-                      );
-                    }
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Enter username and password"),
-                        backgroundColor: Colors.green,
-                      ),
-                    );
-                  }
-                },
+                          }
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text("Enter username and password"),
+                              backgroundColor: Colors.green,
+                            ),
+                          );
+                        }
+                      },
                 child: Text(
                   "Login",
                   style: TextStyle(
