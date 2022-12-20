@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
-import 'package:learn_flutter/35.%20rest_api_1/product_list.dart';
+import 'package:learn_flutter/35.%20rest_api_1/services/api_service.dart';
+import 'package:learn_flutter/35.%20rest_api_1/screens/product_list.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String path = "/flutter-shop-login";

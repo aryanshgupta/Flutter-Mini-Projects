@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
-import 'package:learn_flutter/35.%20rest_api_1/category_product.dart';
+import 'package:learn_flutter/35.%20rest_api_1/services/api_service.dart';
+import 'package:learn_flutter/35.%20rest_api_1/screens/category_product.dart';
 
 class AllCategory extends StatelessWidget {
   const AllCategory({super.key});

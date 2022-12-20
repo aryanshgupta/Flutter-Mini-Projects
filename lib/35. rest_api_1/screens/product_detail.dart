@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
+import 'package:learn_flutter/35.%20rest_api_1/models/product.dart';
+import 'package:learn_flutter/35.%20rest_api_1/services/api_service.dart';
 
 class ProductDetail extends StatelessWidget {
   final int id;
@@ -15,6 +16,7 @@ class ProductDetail extends StatelessWidget {
         future: ApiService().getSingleProduct(id),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            Product product = snapshot.data;
             return SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.all(20.0),
@@ -22,14 +24,14 @@ class ProductDetail extends StatelessWidget {
                   children: [
                     SizedBox(height: 30.0),
                     Image.network(
-                      snapshot.data['image'],
+                      product.image,
                       height: 200.0,
                       width: double.infinity,
                     ),
                     SizedBox(height: 10.0),
                     Center(
                       child: Text(
-                        "\$${snapshot.data['price']}",
+                        "\$${product.price}",
                         style: TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
@@ -38,7 +40,7 @@ class ProductDetail extends StatelessWidget {
                     ),
                     SizedBox(height: 10.0),
                     Text(
-                      snapshot.data['title'],
+                      product.title,
                       style: TextStyle(
                         fontSize: 25.0,
                       ),
@@ -46,16 +48,19 @@ class ProductDetail extends StatelessWidget {
                     ),
                     Chip(
                       label: Text(
-                        snapshot.data['category'],
+                        product.category.toUpperCase(),
                         style: TextStyle(
-                          fontSize: 15.0,
+                          fontSize: 10.0,
                           color: Colors.white,
                         ),
                       ),
                       backgroundColor: Colors.blueGrey,
                     ),
-                    SizedBox(height: 10.0),
-                    Text(snapshot.data['description']),
+                    SizedBox(height: 5.0),
+                    Text(
+                      product.description,
+                      textAlign: TextAlign.justify,
+                    ),
                   ],
                 ),
               ),

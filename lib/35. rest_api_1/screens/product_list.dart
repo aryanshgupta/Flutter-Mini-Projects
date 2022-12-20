@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/35.%20rest_api_1/all_categories.dart';
-import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
-import 'package:learn_flutter/35.%20rest_api_1/cart.dart';
-import 'package:learn_flutter/35.%20rest_api_1/product_detail.dart';
+import 'package:learn_flutter/35.%20rest_api_1/models/product.dart';
+import 'package:learn_flutter/35.%20rest_api_1/screens/all_categories.dart';
+import 'package:learn_flutter/35.%20rest_api_1/services/api_service.dart';
+import 'package:learn_flutter/35.%20rest_api_1/screens/cart.dart';
+import 'package:learn_flutter/35.%20rest_api_1/screens/product_detail.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({super.key});
@@ -52,19 +53,20 @@ class _ProductListState extends State<ProductList> {
             return ListView.builder(
               itemCount: snapshot.data.length,
               itemBuilder: (context, index) {
+                Product product = snapshot.data[index];
                 return ListTile(
                   leading: Image.network(
-                    snapshot.data[index]['image'],
+                    product.image,
                     height: 50.0,
                     width: 30.0,
                   ),
-                  title: Text(snapshot.data[index]['title']),
-                  subtitle: Text("Price - \$${snapshot.data[index]['price']}"),
+                  title: Text(product.title),
+                  subtitle: Text("Price - \$${product.price}"),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ProductDetail(id: snapshot.data[index]['id']),
+                        builder: (context) => ProductDetail(id: product.id),
                       ),
                     );
                   },

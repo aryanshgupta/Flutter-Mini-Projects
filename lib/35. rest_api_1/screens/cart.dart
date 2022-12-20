@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/35.%20rest_api_1/api_service.dart';
+import 'package:learn_flutter/35.%20rest_api_1/models/product.dart';
+import 'package:learn_flutter/35.%20rest_api_1/services/api_service.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -24,10 +25,11 @@ class CartScreen extends StatelessWidget {
                   future: ApiService().getSingleProduct(products[index]['productId']),
                   builder: (context, asyncSnapshot) {
                     if (asyncSnapshot.hasData) {
+                      Product product = asyncSnapshot.data;
                       return ListTile(
-                        title: Text(asyncSnapshot.data['title']),
+                        title: Text(product.title),
                         leading: Image.network(
-                          asyncSnapshot.data['image'],
+                          product.image,
                           height: 40.0,
                         ),
                         subtitle: Text("Quantity - ${products[index]['quantity']}"),
@@ -36,7 +38,7 @@ class CartScreen extends StatelessWidget {
                             await ApiService().deleteCart('1');
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text("Product added to cart"),
+                                content: Text("Product deleted from cart"),
                                 backgroundColor: Colors.black,
                               ),
                             );
