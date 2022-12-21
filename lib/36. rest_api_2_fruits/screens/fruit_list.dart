@@ -32,7 +32,7 @@ class _FruitListState extends State<FruitList> {
                 return ListTile(
                   leading: Text((index + 1).toString()),
                   title: Text(fruit.name == null ? "-" : fruit.name!),
-                  subtitle: Text("Family - \$${fruit.family}"),
+                  subtitle: Text("Family - ${fruit.family}"),
                   onTap: () {
                     Navigator.push(
                       context,
